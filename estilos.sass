@@ -1,0 +1,373 @@
+$colorMenu: rgb(63,184,175)
+$colorEnlace: #9d4934
+$colorFlechas: rgb(224,36,94)
+$colorFlecHover: rgba(224, 36, 96, 0.20)
+$colorCirculos: #eeedf1
+$tipografiaMenu: 'Sansita Swashed', cursive
+$tipografiaSlide: 'Indie Flower', cursive
+
+
+
+/*=======================
+    MENU DE NAVEGACION
+ ========================*/ 
+.menu
+    background: $colorMenu
+    height: 75px
+    width: 100vw
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border-bottom: 1px solid #fff
+    box-shadow: 5px 0 10px rgba(0,0,0,0.6)
+    position: fixed
+    overflow: hidden
+    z-index: 200
+
+.menu__logo
+    width: 100px
+    margin-left: 30px
+    vertical-align: top
+
+.menu__lista
+    display: flex
+    list-style-type: none
+    margin-right: 30px 
+    &.mostrar
+        top: 65px
+
+.menu__items
+    margin: 0 20px
+    .activo
+        border-bottom: 2px solid #fff
+
+.menu__enlaces
+    font-family: $tipografiaMenu
+    color: $colorEnlace
+    text-decoration: none
+    font-size: 18px
+    display: block
+    padding: 7px 2px
+    padding-bottom: 2px
+    border-bottom: 2px solid transparent
+    transition: border-bottom .5s ease
+    font-weight: 300
+    border-radius: 3px
+    cursor: pointer
+    &:hover
+        border-bottom: 2px solid #d60909
+
+.menu__icono
+    margin-right: 30px
+    font-size: 25px
+    color: #000
+    cursor: pointer
+    display: none
+
+/*=========================
+    SLIDER
+ ==========================*/
+.slide
+    position: relative
+    margin: auto
+    width: 100vw
+    overflow: hidden
+    
+
+.slide__ulImage
+    position: relative
+    left: 0%
+    margin: auto
+    height: auto
+    width: 400%
+    clear: both
+    display: table
+
+.slide__contImage
+    position: relative
+    float: left
+    width: 25%
+
+.slide__image
+    width: 100%
+    vertical-align: top
+
+.slide__contTexto
+    position: absolute
+    width: 100%
+    bottom: 40px
+    left: 0
+    text-align: center
+    z-index: 10
+    color: $colorMenu
+    font-family: $tipografiaSlide
+
+.slide__texto
+    background: rgba(0,0,0,.5)
+    padding: 5px 0
+
+
+.slide__contCirculos
+    position: absolute
+    width: 100%
+    margin: auto
+    text-align: center
+    bottom: 10px
+    left: 0
+    z-index: 10
+
+.slide__circulos
+    display: inline-block
+    margin: 0px 5px
+    cursor: pointer
+    opacity: 0.3
+    color: $colorCirculos
+    text-shadow: 2px 2px 6px #333
+    &:first-child
+        opacity: 1
+
+.slide__flechar
+    font-size: 2em
+    color: #857373
+    cursor: pointer
+    z-index: 10
+    position: absolute
+    &.retroceder
+    top: 40%
+    left: 3%
+    width: 35px
+    height: 35px
+    border-radius: 50%
+    text-align: center
+    transition: all .6s ease
+    &:hover
+        color: $colorFlechas
+        background: $colorFlecHover
+
+.slide__flecha
+    font-size: 2em
+    color: #3b3030
+    cursor: pointer
+    z-index: 10
+    position: absolute
+    &.avanzar
+    top: 40%
+    right: 3%
+    width: 35px
+    height: 35px
+    border-radius: 50%
+    text-align: center
+    transition: all .6s ease
+    &:hover
+        color: $colorFlechas
+        background: $colorFlecHover
+
+/*--========================
+   SECTION ABOUT ME
+ ==========================*/
+    
+.about
+    background: url(../img/about-me/fondo.png)
+    background-size: cover
+    background-repeat: no-repeat 
+    font-family: $tipografiaMenu
+
+.about__cont
+    max-width: 1100px
+    margin: 0 auto
+    padding: 0 30px
+    margin-top: 40px
+    text-align: center 
+
+.about__nombre 
+    color: #398f51
+    font-size: 40px
+    font-weight: 700
+    letter-spacing: 8px
+    margin-bottom: 20px
+
+.about__prof
+    color: #777777
+    font-size: 30px
+    font-weight: 400
+
+.about__contImage
+    margin-top: 50px
+    margin-bottom: 50px
+
+.about__img
+    width: 180px
+    height: 180px
+    border-radius: 50%
+
+.about__descripcion
+    font-size: 18px
+    color: $colorEnlace
+    line-height: 50px
+    padding-bottom: 50px
+    font-weight: 200
+
+
+
+/*=========================
+    MEDIA QUERIES
+ =========================*/
+@media screen and (max-width:992px)
+    .menu__enlaces
+        font-size: 16px
+
+    .about__nombre
+        font-size: 30px
+
+    .about__prof
+        font-size: 23px
+
+    .about__contImage
+        margin-top: 30px
+        margin-bottom: 30px
+
+    .about__descripcion
+        line-height: 40px
+
+    .about__img
+        width: 150px
+        height: 150px
+
+@media screen and (max-width:768px)
+    .menu
+        height: 65px
+    .menu__icono
+        display: inline-block
+        &:hover
+            color: #fff
+    .menu__lista
+        position: fixed
+        width: 100%
+        height: calc(100% - 65px)
+        background: #414141
+        top: -100vh
+        text-align: center
+        transition: all .4s
+        flex-direction: column
+        z-index: 100
+    
+    .menu__items
+        margin: 30px 0 0 0
+        line-height: 30px
+        .activo
+            border-bottom: none
+
+    .menu__enlaces
+        font-size: 18px
+        font-weight: 300
+        &:hover
+            border-bottom: none
+            color: #fff
+
+    .slide
+        height: 60vh
+
+    .slide__ulImage
+        height: 100%
+
+    .slide__contImage
+        height: 100%
+
+    .slide__image
+        height: 60vh
+
+    .slide__contTexto
+        font-size: 12px
+        bottom: 20px
+    
+    .slide__circulos
+        font-size: 13px
+
+    .slide__flecha
+        font-size: 1.5em
+        &.avanzar
+            top: 50%
+            &:hover
+                background: transparent
+
+    .slide__flechar 
+        font-size: 1.5em
+        &.retroceder
+            top: 50%
+            &:hover
+                background: transparent
+
+    .about__nombre
+        font-size: 25px
+
+    .about__prof
+        font-size: 18px
+
+    .about__contImage
+        margin-top: 25px
+        margin-bottom: 25px
+
+    .about__descripcion
+        font-size: 16px
+        line-height: 35px
+
+
+
+
+
+    
+@media screen and (max-width:768px) and (orientation: landscape)
+    .menu__items
+        margin: 5px 0 0 0
+
+    .menu__lista
+        overflow: scroll
+        height: calc(100% - 65px)
+    
+
+@media screen and (max-width:480px) 
+    .slide
+        height: 40vh
+
+    .slide__ulImage
+        height: 100%
+
+    .slide__contImage
+        height: 100%
+
+    .slide__image
+        height: 40vh
+          
+    .slide__contTexto
+        display: none
+    
+    .slide__circulos
+        font-size: 10px
+
+    .slide__flecha
+        font-size: 1.3em
+        &.avanzar
+            top: 60%
+
+    .slide__flechar 
+        font-size: 1.3em
+        &.retroceder
+            top: 60%
+
+    .about__nombre
+        font-size: 18px
+
+    .about__prof
+        font-size: 14px
+
+    .about__contImage
+        margin-top: 20px
+        margin-bottom: 20px
+
+    .about__descripcion
+        font-size: 14px
+        line-height: 30px
+
+    .about__img
+        width: 100px
+        height: 100px
